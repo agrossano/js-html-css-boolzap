@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
     <title>BoolzApp</title>
   </head>
   <body>
@@ -18,10 +22,28 @@
         </div>
         <div class="right">
           <div class="right__header"></div>
-          <div class="right__chat"></div>
-          <div class="right__send-msg"></div>
+          <div class="right__chat">
+            <div class="chat__message-out">
+              <ul></ul>
+            </div>
+          </div>
+          <div class="right__send-msg">
+            <div class="send-msg__smiles">
+              <i class="far fa-smile"></i>
+            </div>
+            <input
+              class="send-msg__input-box"
+              type="text"
+              placeholder="Scrivi un messaggio"
+            />
+            <div class="send-msg__send">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

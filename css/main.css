@@ -7,6 +7,7 @@
 }
 
 .body {
+  font-family: "Heebo";
   display: flex;
   width: 100%;
   height: 100vh;
@@ -84,14 +85,52 @@
 }
 
 .right__chat {
-  height: calc(100% - 70px - 80px);
+  display: flex;
+  height: calc(100% - 70px - 60px);
   width: 100%;
   background-image: url(../img/bg.jpg);
   overflow-y: scroll;
 }
 
-.right__send-msg {
+.chat__message-out {
+  padding: 50px 70px;
   width: 100%;
-  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-out__msg {
+  padding: 18px;
+  list-style: none;
+  min-width: 160px;
+  min-height: 40px;
+  background-color: #d5f9ba;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.right__send-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
   background-color: #f7f7f7;
+}
+
+.send-msg__smiles {
+  display: flex;
+  justify-content: center;
+  width: 70px;
+}
+
+.send-msg__input-box {
+  height: 40px;
+  width: 90%;
+}
+
+.send-msg__send {
+  display: flex;
+  justify-content: center;
+  width: 70px;
 }
