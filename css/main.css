@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-color: #dadbd2;
+}
+
+.stripe {
+  width: 100vw;
+  height: 147px;
+  top: 0;
+  background-color: #009688;
+  position: fixed;
+  z-index: 0;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-color: #dadbd2;
+}
+
+.app-wrapper {
+  position: relative;
+  display: flex;
+  height: calc(100% - 38px);
+  width: 80%;
+  top: 24px;
+  background-color: #f7f7f7;
+  margin: 0 auto;
+}
+
+.left {
+  width: 35%;
+  height: 100%;
+  background-color: #6f8684;
+}
+
+.left__header {
+  background-color: antiquewhite;
+  height: 70px;
+  width: 100%;
+}
+
+.left__notifications {
+  height: 80px;
+  width: 100%;
+  background-color: #1f83c5;
+}
+
+.left__search {
+  height: 50px;
+  width: 100%;
+  background-color: aliceblue;
+}
+
+.left__user-messages {
+  height: calc(100% - 70px - 80px - 50px);
+  width: 100%;
+  background-color: white;
+  overflow-y: scroll;
+}
+
+.right {
+  width: 65%;
+  height: 100%;
+  background-color: rgb(37, 131, 99);
+}
+
+.right__header {
+  background-color: antiquewhite;
+  height: 70px;
+  width: 100%;
+  border-left: 1px solid black;
+}
+
+.right__chat {
+  height: calc(100% - 70px - 80px);
+  width: 100%;
+  background-image: url(../img/bg.jpg);
+  overflow-y: scroll;
+}
+
+.right__send-msg {
+  width: 100%;
+  height: 80px;
+  background-color: #f7f7f7;
+}
