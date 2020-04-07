@@ -1,15 +1,17 @@
 $(document).ready(function () {
-  //variabile input
+  //bottone invio
+  var sendBtn = $('.send-msg__send i')
 
-  var sendBtn = $('.send-msg__send')
-
-
+  //funzione invio messaggio
   $(sendBtn).click(function () {
-    var text = $('input')
-    var input = $('.send-msg__input-box')
+    var text = $('.send-msg__input-box') //riferimento campo input 
+    //se il campo input non è vuoto posta messaggio
     if (text.val() !== "") {
-      $(".chat__message-out ul").append('<li class="message-out__msg">' + text.val() + '</li>');
+      $(".chat__active").append('<div class="active__message-out">' + text.val() + '</div>');
+      //svuota campo input
       $(text).val('');
+
+
     }
   });
 

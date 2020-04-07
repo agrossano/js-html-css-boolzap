@@ -4,10 +4,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "lato";
 }
 
 .body {
-  font-family: "Heebo";
   display: flex;
   width: 100%;
   height: 100vh;
@@ -40,6 +40,7 @@
   margin: 0 auto;
 }
 
+/* SEZIONE SINISTRA */
 .left {
   width: 35%;
   height: 100%;
@@ -47,30 +48,126 @@
 }
 
 .left__header {
-  background-color: antiquewhite;
+  display: flex;
+  background-color: #eaeaea;
   height: 70px;
   width: 100%;
+  justify-content: space-between;
+}
+
+.header__image-profile {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.header__image-profile img {
+  width: 50px;
+  height: auto;
+  border-radius: 100%;
+}
+
+.header__icons {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 22px;
+  padding-right: 26px;
+}
+
+.header__icons i {
+  color: #b1b1b1;
+  margin-left: 18px;
 }
 
 .left__notifications {
+  display: flex;
   height: 80px;
   width: 100%;
-  background-color: #1f83c5;
+  background-color: #8edafc;
+}
+
+.notifications__bell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: 48px;
+  font-size: 20px;
+  background-color: #fff;
+  margin: auto 0 auto 20px;
+  background: #f2fbff;
+  border-radius: 100%;
+  color: #8edafc;
+}
+
+.notifications__disclaimer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 8px;
+}
+.notifications__disclaimer p:nth-child(1) {
+  font-weight: 500;
+  font-size: 15px;
+}
+.notifications__disclaimer p:nth-child(2) {
+  color: #4f7485;
+  font-size: 13.5px;
+  text-decoration: underline;
 }
 
 .left__search {
   height: 50px;
   width: 100%;
-  background-color: aliceblue;
+  background-color: #fafafa;
 }
 
-.left__user-messages {
+.left__user {
   height: calc(100% - 70px - 80px - 50px);
   width: 100%;
   background-color: white;
   overflow-y: scroll;
 }
 
+.user__msg {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  width: 100%;
+  height: 80px;
+}
+
+.msg__user-img {
+  width: 18%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+.msg__user-img img {
+  width: 60px;
+  height: auto;
+  border-radius: 100%;
+}
+
+.msg__user-name-last {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.msg__user-name-time {
+  width: 56%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* SEZIONE DESTRA */
 .right {
   width: 65%;
   height: 100%;
@@ -78,10 +175,10 @@
 }
 
 .right__header {
-  background-color: antiquewhite;
+  background-color: #eaeaea;
   height: 70px;
   width: 100%;
-  border-left: 1px solid black;
+  border-left: 1px solid #e4dcd4;
 }
 
 .right__chat {
@@ -90,23 +187,43 @@
   width: 100%;
   background-image: url(../img/bg.jpg);
   overflow-y: scroll;
-}
-
-.chat__message-out {
   padding: 50px 70px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
 }
 
-.message-out__msg {
-  padding: 18px;
-  list-style: none;
-  min-width: 160px;
+.chat__active {
+  display: block;
+  width: 100%;
+}
+
+.active__message-out {
+  float: right;
+  clear: both;
+  min-width: 10%;
+  max-width: 80%;
+  width: fit-content;
   min-height: 40px;
+  height: fit-content;
+  padding: 18px;
   background-color: #d5f9ba;
   border-radius: 10px;
   margin: 20px;
+}
+
+.active__message-in {
+  float: left;
+  clear: both;
+  min-width: 10%;
+  max-width: 80%;
+  width: fit-content;
+  min-height: 40px;
+  height: fit-content;
+  padding: 18px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.message-out__msg {
 }
 
 .right__send-msg {
@@ -115,7 +232,7 @@
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: #f7f7f7;
+  background-color: #f3eeea;
 }
 
 .send-msg__smiles {
