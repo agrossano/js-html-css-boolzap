@@ -241,9 +241,6 @@
   padding-left: 10px;
 }
 
-.header__user-name-last p:nth-child(1) {
-}
-
 .header__user-name-last p:nth-child(2) {
   font-size: 13px;
   color: #6b7376;

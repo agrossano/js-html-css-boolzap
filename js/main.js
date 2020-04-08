@@ -6,6 +6,7 @@ $(document).ready(function () {
   var searchInput = $('.search__input');//campo di ricerca contatti
   var user = $('.user__msg')//blocco utente
 
+
   //funzione invio messaggio
   $(sendBtn).click(function () {
     var msg = textInput.val() //valore campo input 
@@ -16,32 +17,25 @@ $(document).ready(function () {
       textInput.val("");
       //funzione timeout che invia messaggio dopo 1 secondo
       setTimeout(function () {
-        $(".chat__active").append('<div class="active__message message--in">Ok!</div>');
+        $(".chat__active").append('<div class="active__message message--in">Ciao!</div>');
       }, 1000);
     }
   });
 
 
-  /*   $(searchInput).keyup(function () {
-      var searchedText = searchInput.val();
-      console.log(searchedText)
-  
-    }); */
-
+  //funzione ricerca contatti in ascolto pressione tasti
   $(searchInput).keyup(function (e) {
-    console.log(e.target.value);
     $.each(user, function () {
+      //salvo il nome dell'user corrente e lo trasformo in lettere minuscole
       var currentUser = $('.msg__user-name-last p', this).html().toLowerCase();
-      console.log(currentUser)
-      if (currentUser.includes(e.target.value)) {
+      //se il nome dell'utente nell'iterazione corrente è uguale al valore di input digitato mostro il div corrispondente, altrimenti lo nascondo
+      if (currentUser.includes(e.target.value)) { //
         $(this).show();
-        console.log('pippo')
       } else {
         $(this).hide();
       }
     });
   });
-
 });
 
 
