@@ -265,8 +265,10 @@
 
 .active__message {
   min-width: 10%;
+  width: -moz-fit-content;
   width: fit-content;
   min-height: 55px;
+  height: -moz-fit-content;
   height: fit-content;
   padding: 18px;
   border-radius: 10px;
