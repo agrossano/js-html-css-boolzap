@@ -263,8 +263,7 @@
   width: 100%;
 }
 
-.active__message-out {
-  float: right;
+.active__message {
   clear: both;
   min-width: 10%;
   max-width: 80%;
@@ -277,21 +276,14 @@
   margin: 20px;
 }
 
-.active__message-in {
-  float: left;
-  clear: both;
-  min-width: 10%;
-  max-width: 80%;
-  width: fit-content;
-  min-height: 40px;
-  height: fit-content;
-  padding: 18px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  margin: 20px;
+.message--out {
+  float: right;
+  background-color: #d5f9ba;
 }
 
-.message-out__msg {
+.message--in {
+  float: left;
+  background-color: #ffffff;
 }
 
 .right__send-msg {
