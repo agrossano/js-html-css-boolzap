@@ -38,6 +38,8 @@
   top: 25px;
   background-color: #f7f7f7;
   margin: 0 auto;
+  box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19),
+    0 12px 15px 0 rgba(0, 0, 0, 0.24);
 }
 
 /* SEZIONE SINISTRA */
@@ -256,30 +258,27 @@
 }
 
 .chat__active {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 .active__message {
-  clear: both;
   min-width: 10%;
-  max-width: 80%;
   width: fit-content;
-  min-height: 40px;
+  min-height: 55px;
   height: fit-content;
   padding: 18px;
-  background-color: #d5f9ba;
   border-radius: 10px;
   margin: 20px;
 }
 
 .message--out {
-  float: right;
   background-color: #d5f9ba;
+  align-self: flex-end;
 }
 
 .message--in {
-  float: left;
   background-color: #ffffff;
 }
 
@@ -296,7 +295,7 @@
 .send-msg__smiles {
   display: flex;
   justify-content: center;
-  width: 102px;
+  width: 100px;
   height: auto;
 }
 .send-msg__smiles i {

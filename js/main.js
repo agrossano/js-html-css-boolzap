@@ -7,11 +7,11 @@ $(document).ready(function () {
   var user = $('.user__msg')//blocco utente
 
 
-  //funzione invio messaggio
-  $(sendBtn).click(function () {
+  //funzione che posta messaggio e risposta
+  function appendText() {
     var msg = textInput.val() //valore campo input 
     //se il campo input non è vuoto posta messaggio
-    if (msg !== "") {
+    if (msg) {
       $(".chat__active").append('<div class="active__message message--out">' + msg + '</div>');
       //svuota campo input
       textInput.val("");
@@ -19,6 +19,19 @@ $(document).ready(function () {
       setTimeout(function () {
         $(".chat__active").append('<div class="active__message message--in">Ciao!</div>');
       }, 1000);
+    }
+  }
+
+
+  //funzione invio messaggio da click
+  $(sendBtn).click(function () {
+    appendText();
+  });
+
+  //funzione invio messaggio da pressione invio
+  $(textInput).keypress(function (e) {
+    if (e.which == 13) {
+      appendText();
     }
   });
 
