@@ -12,12 +12,12 @@ $(document).ready(function () {
     var msg = textInput.val() //valore campo input 
     //se il campo input non è vuoto posta messaggio
     if (msg) {
-      $(".window--active ").append('<div class="window__message message--out">' + msg + '</div>');
+      $(".window--active ").append('<div class="window__message message--out"><span>' + msg + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
       //svuota campo input
       textInput.val("");
       //funzione timeout che invia messaggio dopo 1 secondo
       setTimeout(function () {
-        $(".window--active ").append('<div class="window__message message--in">Ciao!</div>');
+        $(".window--active ").append('<div class="window__message message--in"><span>Ciao!</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
       }, 1000);
     }
   }
@@ -59,13 +59,26 @@ $(document).ready(function () {
     var chatList = $('.right__chat > div')
     //rimuovo la classe window--active a tutti i div messaggi
     chatList.removeClass("window--active")
-    //aggiungo la classe active all'user cliccato e la tolgo a tutti gli altri
+    //aggiungo la classe active all'user cliccato
     $(this).addClass("msg--active")
+    //tolgo la classe active a tutti gli user ad eccetto di quello cliccato
     $('.user__msg').not(this).removeClass("msg--active")
     //aggiungo la classe active alla chat corrispondente l'user cliccato
     chatList.eq(clickedUser).addClass("window--active");
   });
 
+  //funzione per rimuovere messaggio
+  $('.chat__window').on("click", ".message__panel",
+    function () {
+      $(this).parent().remove();
+    })
+
+
+  //funzione per mostrare / nascondere pannello messaggi
+  $('.chat__window').on("click", ".window__message i",
+    function () {
+      $(this).siblings().toggleClass("panel--active");
+    })
 
 
 });
