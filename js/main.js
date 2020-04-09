@@ -12,12 +12,12 @@ $(document).ready(function () {
     var msg = textInput.val() //valore campo input 
     //se il campo input non è vuoto posta messaggio
     if (msg) {
-      $(".chat__active").append('<div class="active__message message--out">' + msg + '</div>');
+      $(".window--active ").append('<div class="window__message message--out">' + msg + '</div>');
       //svuota campo input
       textInput.val("");
       //funzione timeout che invia messaggio dopo 1 secondo
       setTimeout(function () {
-        $(".chat__active").append('<div class="active__message message--in">Ciao!</div>');
+        $(".window--active ").append('<div class="window__message message--in">Ciao!</div>');
       }, 1000);
     }
   }
@@ -49,6 +49,25 @@ $(document).ready(function () {
       }
     });
   });
+
+
+  //funzione cambio chat
+  $(".user__msg").click(function () {
+    //salvo index dell'user cliccato
+    var clickedUser = $(this).index();
+    //salvo riferimento al div dei messaggi
+    var chatList = $('.right__chat > div')
+    //rimuovo la classe window--active a tutti i div messaggi
+    chatList.removeClass("window--active")
+    //aggiungo la classe active all'user cliccato e la tolgo a tutti gli altri
+    $(this).addClass("msg--active")
+    $('.user__msg').not(this).removeClass("msg--active")
+    //aggiungo la classe active alla chat corrispondente l'user cliccato
+    chatList.eq(clickedUser).addClass("window--active");
+  });
+
+
+
 });
 
 
