@@ -6,8 +6,6 @@ $(document).ready(function () {
   var searchInput = $('.search__input'); //campo di ricerca contatti
   var user = $('.user__msg'); //blocco utente
 
-
-
   //funzione che ritorna l'ora attuale
   function oraEsatta() {
     var dt = new Date(); //oggetto data
@@ -15,23 +13,21 @@ $(document).ready(function () {
     return time;
   }
 
-
   //funzione che posta messaggio e risposta
   function appendText() {
     var msg = textInput.val(); //valore campo input 
     //se il campo input non è vuoto posta messaggio
-    if (msg) {
-      $(".window--active ").append('<div class="window__message message--out"><span>' + msg + '</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
+    if (msg) { // msg è vero se la stringa non è vuota
+      $(".window--active ").append('<div class="window__message message--out"><span>' + msg + '</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel panel--out"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
       textInput.val(""); //svuota campo input
       $('.header__user-name-last p:nth-child(2)').html('Sta scrivendo un messaggio...'); // Stampo l'avviso di "scrittura messaggio" prima di mandare la risposta
       //funzione timeout che invia messaggio dopo 1 secondo
       setTimeout(function () {
-        $(".window--active ").append('<div class="window__message message--in"><span>Ciao!</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
+        $(".window--active ").append('<div class="window__message message--in"><span>Ciao!</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel "><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
         $('.header__user-name-last p:nth-child(2)').html('Ultimo accesso oggi alle ' + oraEsatta()); //stampo messaggio con ultimo accesso
       }, 1000);
     }
   }
-
 
   //funzione invio messaggio da click
   $(sendBtn).click(function () {
@@ -84,6 +80,3 @@ $(document).ready(function () {
       $(this).siblings().toggleClass("panel--active");
     })
 });
-
-
-

@@ -2,14 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Lato";
 }
 
-.body {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  background-color: #dadbd2;
+body {
+  font-family: "Lato", sans-serif;
 }
 
 .stripe {
@@ -56,7 +52,7 @@
 }
 
 .header__image-profile {
-  width: 55%;
+  width: 200px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -109,6 +105,7 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 8px;
+  overflow: hidden;
 }
 .notifications__disclaimer p:nth-child(1) {
   font-weight: 500;
@@ -228,6 +225,7 @@
   height: 70px;
   width: 100%;
   border-left: 1px solid #e4dcd4;
+  overflow: hidden;
 }
 
 .header__user-img {
@@ -291,6 +289,16 @@
   position: relative;
 }
 
+.message--in {
+  border-radius: 0 10px 10px 10px;
+  clip-path: polygon(0 0, 100% 0, 100% 207%, 8% 207%, 8% 19%);
+}
+.message--out {
+  z-index: 0;
+  border-radius: 10px 10px 10px 0;
+  clip-path: polygon(0 0, 100% 0, 90% 20%, 90% 206%, 0% 207%);
+}
+
 .message__panel {
   display: none;
   justify-content: space-between;
@@ -300,18 +308,22 @@
   flex-direction: column;
   position: absolute;
   background-color: #fff;
-  min-width: 132px;
+  min-width: 142px;
   width: -moz-fit-content;
   width: fit-content;
   min-height: 70px;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 13px;
+  padding: 13px 5px 13px 24px;
   top: 44px;
   right: 0%;
   z-index: 999;
   box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19),
     0 12px 15px 0 rgba(0, 0, 0, 0.24);
+}
+
+.panel--out {
+  padding: 13px 14px 13px 12px;
 }
 
 .panel--active {
@@ -332,7 +344,7 @@
   color: #b6b9bb;
   margin: 0 10px 8px;
   bottom: 0;
-  right: 0;
+  right: 7px;
 }
 
 .window__message:hover i {
