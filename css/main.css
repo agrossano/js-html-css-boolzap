@@ -276,7 +276,6 @@ body {
   position: relative;
   display: flex;
   justify-content: space-between;
-  min-width: 10%;
   min-width: 132px;
   width: -moz-fit-content;
   width: fit-content;
@@ -286,17 +285,20 @@ body {
   padding: 18px;
   border-radius: 10px;
   margin: 20px;
-  position: relative;
 }
 
 .message--in {
+  background-color: #ffffff;
   border-radius: 0 10px 10px 10px;
-  clip-path: polygon(0 0, 100% 0, 100% 207%, 8% 207%, 8% 19%);
+  /*   clip-path: polygon(0 0, 100% 0, 100% 207%, 8% 207%, 8% 19%);
+ */
 }
 .message--out {
-  z-index: 0;
+  background-color: #d5f9ba;
+  align-self: flex-end;
   border-radius: 10px 10px 10px 0;
-  clip-path: polygon(0 0, 100% 0, 90% 20%, 90% 206%, 0% 207%);
+  /*   clip-path: polygon(0 0, 100% 0, 90% 20%, 90% 206%, 0% 207%);
+ */
 }
 
 .message__panel {
@@ -314,7 +316,7 @@ body {
   min-height: 70px;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 13px 5px 13px 24px;
+  padding: 13px;
   top: 44px;
   right: 0%;
   z-index: 999;
@@ -322,8 +324,8 @@ body {
     0 12px 15px 0 rgba(0, 0, 0, 0.24);
 }
 
-.panel--out {
-  padding: 13px 14px 13px 12px;
+.message__panel span:hover {
+  color: #6b7376;
 }
 
 .panel--active {
@@ -349,15 +351,6 @@ body {
 
 .window__message:hover i {
   display: inline-block;
-}
-
-.message--out {
-  background-color: #d5f9ba;
-  align-self: flex-end;
-}
-
-.message--in {
-  background-color: #ffffff;
 }
 
 .right__send-msg {
