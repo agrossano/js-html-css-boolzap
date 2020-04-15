@@ -5,6 +5,8 @@ $(document).ready(function () {
   var textInput = $('.send-msg__input-box'); //campo di testo invio messaggio
   var searchInput = $('.search__input'); //campo di ricerca contatti
   var user = $('.user__msg'); //blocco utente
+  var source = $('#msg-template').html();
+  var template = Handlebars.compile(source);
 
 
   //cambiare user e conversazione associata
@@ -37,13 +39,19 @@ $(document).ready(function () {
   function appendText() {
     var msg = textInput.val(); //valore campo input 
     //SE il campo input non è vuoto posta messaggio
+    //Handlebars operations
+    var contextIn = { "msg": msg, "ora": oraEsatta(), "inout": "out" };
+    var msgIn = template(contextIn);
+    var contextOut = { "msg": "Ciao!", "ora": oraEsatta(), "inout": "in" };
+    var msgOut = template(contextOut);
+
     if (msg) { // quando la stringa NON è vuota, ritorna vero
-      $(".window--active").append('<div class="window__message message--out"><span>' + msg + '</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel panel--out"><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
+      $(".window--active").append(msgIn);
       textInput.val(""); //svuota campo input
       $('.header__user-name-last p:nth-child(2)').html('Sta scrivendo un messaggio...'); // Stampo l'avviso di "scrittura messaggio" prima di mandare la risposta
       //funzione timeout che invia messaggio dopo 1 secondo
       setTimeout(function () {
-        $(".window--active ").append('<div class="window__message message--in"><span>Ciao!</span><span id="time">' + oraEsatta() + '</span><i class="fa fa-chevron-down f-right message-options"></i><div class="message__panel "><span>Info messaggio</span><span class="delete">Elimina messaggio</span></div></div>');
+        $(".window--active ").append(msgOut);
         $('.header__user-name-last p:nth-child(2)').html('Ultimo accesso oggi alle ' + oraEsatta()); //stampo messaggio con ultimo accesso
         $(".msg--active .msg__user-name-time p").html(oraEsatta());
       }, 1000);
@@ -96,6 +104,4 @@ $(document).ready(function () {
   function removeMessage() {
     $(this).closest('.window__message').remove();
   }
-
-
 });

@@ -268,6 +268,27 @@
         </div>
       </div>
     </div>
+    //TEMPLATE
+    <script id="msg-template" type="text/x-handlebars-template">
+      <div class="window__message message--{{inout}}">
+        <span>
+          {{msg}}
+        </span>
+        <span id="time">
+          {{ora}}
+        </span>
+        <i class="fa fa-chevron-down f-right message-options"></i>
+        <div class="message__panel panel--out">
+          <span>
+            Info messaggio
+          </span>
+          <span class="delete">
+            Elimina messaggio
+          </span>
+        </div>
+      </div>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </body>
